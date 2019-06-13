@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+from LSTM import LSTM
 
 class LMModel(nn.Module):
     # Language model is composed of three parts: a word embedding layer, a rnn network and a output layer. 
@@ -13,7 +14,11 @@ class LMModel(nn.Module):
         # WRITE CODE HERE witnin two '#' bar
         ########################################
         # Construct you RNN model here. You can add additional parameters to the function.
-        self.rnn = None
+        self.rnn = LSTM(input_size=ninput,
+                        output_size=ninput,
+                        hidden_size=nhid,
+                           cell_size=nhid,
+                           num_layers=nlayers)
         ########################################
         self.decoder = nn.Linear(nhid, nvoc)
         self.init_weights()
@@ -33,8 +38,7 @@ class LMModel(nn.Module):
         ########################################
         # With embeddings, you can get your output here.
         # Output has the dimension of sequence_length * batch_size * number of classes
-        output = None
-        hidden = None
+        output, hidden, _ = self.rnn(embeddings)
         ########################################
 
         output = self.drop(output)
