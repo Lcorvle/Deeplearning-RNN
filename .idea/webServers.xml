@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="45253fc0-7a55-4df1-a4b8-d11e6a95c10c" name="80.36" url="http://166.111.80.36">
+        <fileTransfer host="166.111.80.36" port="22" rootFolder="/data/xiangshouxing" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
